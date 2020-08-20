@@ -71,6 +71,14 @@ useEffect(() => {
   return () => clearInterval(interval);
 },[]);
 
+useEffect(() => {
+  const interval = setInterval(() => {
+   setMin(0)
+   setSec(0)
+  }, 3600000);
+  return () => clearInterval(interval);
+},[]);
+
 
 var counter = (min < 10 ? "0" + min : min) + ":" + (sec < 10 ? "0" + sec : sec)
 
@@ -180,27 +188,29 @@ if(props.winner && winner !== 'none'){
   }
   fetchData()}, );
 
-
+function handleClose(){
+  setIsOpen(false)
+  SetWinner(null)
+}
 
   const sendWinner = async () => {
 try{
 await axios.post(`http://localhost:3001/api/v1/records`, {
     id: id,
-    winnerName: (name === '' ?  'Guest' : name),
+    winnerName: (name === '' ?  '-' : name),
     date: new Date().toISOString().substr(0, 19).replace('T', ' '),
     duration: props.counter
   })
 
   .then(function (response) {
-    console.log(response.data);
-
+  console.log(response.data);
+  setIsOpen(false);
+  SetWinner(null)
   })}
     catch(error) {
     console.log(error);
     }
 
-  setIsOpen(false);
-  SetWinner(null)
 }
 
     return (
@@ -218,9 +228,10 @@ await axios.post(`http://localhost:3001/api/v1/records`, {
           <div>Place your name in the records list!</div>
           <br/>
           <form>
-            <input onChange={handleChange} style={{borderRadius:'5px'}}/>
+            <input onChange={handleChange} style={{border:'2px solid white', borderRadius:'5px'}}/>
             <button onClick={() => sendWinner()}>Send</button>
-            <button onClick={() => setIsOpen(false)}>Cancel</button>
+            <button onClick={() => handleClose()}>Cancel</button>
+  
           </form>
         </Modal>
       </div>
@@ -230,20 +241,37 @@ await axios.post(`http://localhost:3001/api/v1/records`, {
 Modal.setAppElement('#root')
 
 function Record(props){
-const [loading, setLoading] = useState(false);
+const [loading, setLoading] = useState(true);
+const [dots, setDots] = useState('Loading leaderboard')
 const [list, setList] = useState([])
+
+
+useEffect(() => {
+  const interval = setInterval(() => {
+   setDots(dots => dots + ' .')
+  }, 200);
+  return () => clearInterval(interval);
+},[]);
+
+useEffect(() => {
+  const interval = setInterval(() => {
+   setDots(dots => 'Loading leaderboard')
+  }, 800);
+  return () => clearInterval(interval);
+},[]);
 
 
   useEffect(() => {
     async function fetchData() {
     const res = await axios.get('http://localhost:3001/api/v1/records');
     setList(res.data)
+    setLoading(false)
   }
   fetchData()}, []);
 
 
   return (  
-
+<div>
   <table>
     <tbody>
 <tr>
@@ -258,9 +286,14 @@ const [list, setList] = useState([])
   <td>{e.date}</td>
   <td>{e.duration}</td>
 </tr>)}
-
 </tbody>
   </table>
+  <div  className="loading">
+          { loading ?
+          <div>{dots}</div> :
+          <div></div>
+        }
+        </div> </div>
   )
 }
 
