@@ -182,7 +182,7 @@ if(props.winner && winner !== 'none'){
 
   useEffect(() => {
     async function fetchData() {
-    res = await axios.get('http://localhost:3001/api/v1/records');
+    res = await axios.get('/api/v1/records');
     res = (res.data.length + 1).toString()
     setId(res)
   }
@@ -195,7 +195,7 @@ function handleClose(){
 
   const sendWinner = async () => {
 try{
-await axios.post(`http://localhost:3001/api/v1/records`, {
+await axios.post('/api/v1/records', {
     id: id,
     winnerName: (name === '' ?  '-' : name),
     date: new Date().toISOString().substr(0, 19).replace('T', ' '),
@@ -263,7 +263,7 @@ useEffect(() => {
 
   useEffect(() => {
     async function fetchData() {
-    const res = await axios.get('http://localhost:3001/api/v1/records');
+    const res = await axios.get('/api/v1/records');
     setList(res.data)
     setLoading(false)
   }
