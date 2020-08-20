@@ -9,7 +9,13 @@
     "axios": "^0.19.2",
     "express": "^4.17.1",
     "fs": "0.0.1-security",
-    "proxy": "localhost:3000",
+"proxy": {
+"secure": true,
+"target": {
+  "host": "https://localhost",
+  "port": 3001
+  }
+},
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-modal": "^3.11.2",
