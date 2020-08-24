@@ -19,8 +19,8 @@ body {
 
 .modal button{
   border-radius: 5px;
-  background: white;
-  border: 2px solid white;
+  background: grey;
+  border: 2px solid grey;
   margin-left :10px;
 }
 
@@ -49,7 +49,7 @@ box-shadow: 0px 0px 5px #000000;
   position: absolute;
   top:393px;
   width:150px;
-  margin-left: 58%;
+  margin-left: 59.2%;
   font-size:50px;
   text-align: center;
 
@@ -99,7 +99,7 @@ ul {
   display: flex;
   flex-direction: column;
   position: absolute;
-  left:59.3%;
+  left:60.5%;
   height:350px;
   border: 2px solid rgb(180, 180, 180);
 background:rgb(148, 147, 77);
@@ -134,10 +134,11 @@ top: 220px;
 position: absolute;
 border: 1px solid rgb(255, 255, 255);
 margin-top:260px;
-width:605px;
+width:620px;
 border-radius: 5px;
 background: rgb(34, 34, 34);
-color:white
+color:white;
+margin-bottom: 20px;
 }
 
 td{
@@ -150,4 +151,11 @@ th{
   background:grey;
   border-radius: 2px;
   border: 5px solid grey
+}
+
+.loading{
+position: absolute;
+top:550px;
+font-size: 40px;
+left:35%;
 }
