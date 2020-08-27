@@ -3,5 +3,5 @@
 ------------
 
 ### Glitch App
-https://glitch.com/edit/#!/pale-foggy-radiator?path=package.json%3A12%3A0
+https://gossamer-cedar-walrus.glitch.me/
  
