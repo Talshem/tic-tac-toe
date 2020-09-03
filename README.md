@@ -1,7 +1,7 @@
 
 ## tic-tac-toe
 
-(image.png)
+[image.png]
 
 ### Glitch App
 https://gossamer-cedar-walrus.glitch.me/
