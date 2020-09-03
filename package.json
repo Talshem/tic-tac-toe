@@ -1,6 +1,7 @@
 {
   "name": "tic-tac-toe",
   "version": "0.1.0",
+  "proxy": "localhost:3000",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -9,7 +10,6 @@
     "axios": "^0.19.2",
     "express": "^4.17.1",
     "fs": "0.0.1-security",
-    "proxy": "localhost:3000",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-modal": "^3.11.2",

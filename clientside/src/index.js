@@ -186,7 +186,7 @@ if(props.winner && winner !== 'none'){
     res = (res.data.length + 1).toString()
     setId(res)
   }
-  fetchData()}, );
+  fetchData()}, []);
 
 function handleClose(){
   setIsOpen(false)

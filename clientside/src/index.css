@@ -25,8 +25,8 @@ body {
 }
 
 .board{
-  position: absolute;
-  left: 30%;
+  position: relative;
+  left: 440px;
   border: 2px solid black;
   border-radius: 3px;
 box-shadow: 0px 0px 5px #000000;
@@ -49,7 +49,7 @@ box-shadow: 0px 0px 5px #000000;
   position: absolute;
   top:393px;
   width:150px;
-  margin-left: 59.2%;
+  left:923px;
   font-size:50px;
   text-align: center;
 
@@ -99,7 +99,7 @@ ul {
   display: flex;
   flex-direction: column;
   position: absolute;
-  left:60.5%;
+  left:923px;
   height:350px;
   border: 2px solid rgb(180, 180, 180);
 background:rgb(148, 147, 77);
@@ -129,7 +129,7 @@ outline: none;
 
 table{
 text-align: center;
-left:30%;
+left: 460px;
 top: 220px;
 position: absolute;
 border: 1px solid rgb(255, 255, 255);
