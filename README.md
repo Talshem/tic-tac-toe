@@ -1,6 +1,6 @@
 # tic-tac-toe
  
-[image.png]
+![image](image.png)
 
 ## glitch app:
 https://gossamer-cedar-walrus.glitch.me/
